@@ -12,6 +12,8 @@ def get_numbers_ticket(min: int, max: int, quantity: int) -> list[int]:
     """
 
     try:
+        if min < 1 or max > 1000:
+            raise ValueError
         nums = list(range(min, max + 1))
         return sorted(sample(nums, quantity))
     except (ValueError, TypeError):
